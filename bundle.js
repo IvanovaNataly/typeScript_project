@@ -67,7 +67,18 @@
 /* 0 */
 /***/ (function(module, exports) {
 
-console.log("Hello");
+var Person = (function () {
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    Person.prototype.greet = function () {
+        console.log("Hi, I am " + this.name);
+    };
+    return Person;
+}());
+var person = new Person("Jack", 29);
+person.greet();
 
 
 /***/ })
